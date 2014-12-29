@@ -1,0 +1,40 @@
+body {
+  font-family: Helvetica;
+}
+
+.severity {
+  color: #fff;
+}
+
+.failed {
+  .severity {
+    background: #f00;
+  }
+}
+
+.passed {
+  .severity {
+    background: #18990C;
+  }
+}
+
+.na {
+  .severity {
+    background: #ccc;
+  }
+}
+
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 6px 4px 3px;
+}
+
+pre {
+  font-size: 15px;
+  line-height: 17px;
+}

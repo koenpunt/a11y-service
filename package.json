@@ -1,12 +1,21 @@
 {
+  "author": "Koen Punt <koen@koenpunt.nl>",
   "main": "index.js",
   "dependencies": {
     "a11y": "^0.2.3",
     "consolidate": "^0.10.0",
     "express": "^4.10.6",
-    "hogan.js": "^3.0.2"
+    "hogan.js": "^3.0.2",
+    "underscore": "^1.7.0"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "^0.17.0"
   }
 }

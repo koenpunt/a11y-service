@@ -2,8 +2,11 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>a11y as a service</title>
+  <title>report for {{domain}} - a11y as a service</title>
   <meta name="description" content="a11y as a service">
+
+  <link rel="stylesheet" href="/assets/app.css" type="text/css">
+
   <script>
     // Replace no-js class for js
     var dc = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1' + 'js' + '$2');
@@ -15,7 +18,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <h3>a11y as a service</h3>
+  {{$content}}{{/content}}
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 

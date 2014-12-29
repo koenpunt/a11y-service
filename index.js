@@ -2,16 +2,19 @@ var express = require('express');
 var app = express();
 var a11y = require('a11y');
 var engines = require('consolidate');
+var _ = require('underscore');
+
+var partials = { layout: 'layout' };
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-// app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/app/views');
 app.engine('html', engines.hogan);
 app.set('view engine', 'html');
 
 app.get('/', function(request, response) {
-  response.render('index');
+  response.render('index', { partials: _.clone(partials) });
 });
 
 app.get('/report/:domain', function(req, res) {
@@ -42,7 +45,7 @@ app.get('/report/:domain', function(req, res) {
 
     app.locals.domain = domain;
 
-    res.render('report');
+    res.render('report', { partials: _.clone(partials) });
 
   });
 

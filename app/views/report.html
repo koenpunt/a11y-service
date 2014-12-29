@@ -1,0 +1,49 @@
+{{<layout}}
+{{$content}}
+
+  <h3>report for {{domain}} - a11y as a service</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Failed</th>
+      </tr>
+    </thead>
+    <tbody class="failed">
+    {{#failed}}
+      <tr>
+        <td class="severity">{{severity}}</td><td>{{heading}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><pre>{{elements}}</pre></td>
+      </tr>
+    {{/failed}}
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">Passed</th>
+      </tr>
+    </thead>
+    <tbody class="passed">
+    {{#passed}}
+      <tr>
+        <td class="severity">{{severity}}</td><td>{{heading}}</td>
+      </tr>
+    {{/passed}}
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">NA</th>
+      </tr>
+    </thead>
+    <tbody class="na">
+    {{#na}}
+      <tr>
+        <td class="severity">{{severity}}</td><td>{{heading}}</td>
+      </tr>
+    {{/na}}
+    </tbody>
+  </table>
+
+{{/content}}
+{{/layout}}
