@@ -17,11 +17,11 @@ app.get('/', function(request, response) {
   response.render('index', { partials: _.clone(partials) });
 });
 
-app.get('/report/:domain', function(req, res) {
+app.get(/^\/report\/(.+)/, function(req, res) {
 
-  var domain = req.params.domain;
+  var url = req.params[0];
 
-  a11y(domain, function(err, reports) {
+  a11y(url, function(err, reports) {
 
     if(err) {
       return res.status(400).send(err.message);
@@ -44,7 +44,7 @@ app.get('/report/:domain', function(req, res) {
       passed  : passed,
       failed  : failed,
       na      : na,
-      domain  : domain
+      url     : url
     });
 
   });
