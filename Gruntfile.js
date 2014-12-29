@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['app/assets/javascripts/app.js'],
+        src: ['app/assets/javascripts/main.js'],
         dest: 'public/assets/app.js'
       }
     },
