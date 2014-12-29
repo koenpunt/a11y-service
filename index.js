@@ -27,25 +27,25 @@ app.get('/report/:domain', function(req, res) {
       return res.status(400).send(err.message);
     }
 
-    var passed = reports.audit.filter(function(el){
+    var passed = reports.audit.filter(function(el) {
       return el.result === 'PASS';
     });
 
-    var failed = reports.audit.filter(function(el){
+    var failed = reports.audit.filter(function(el) {
       return el.result === 'FAIL';
     });
 
-    var na = reports.audit.filter(function(el){
+    var na = reports.audit.filter(function(el) {
       return el.result === 'NA';
     });
 
-    app.locals.passed = passed;
-    app.locals.failed = failed;
-    app.locals.na     = na;
-
-    app.locals.domain = domain;
-
-    res.render('report', { partials: _.clone(partials) });
+    res.render('report', {
+      partials: _.clone(partials),
+      passed  : passed,
+      failed  : failed,
+      na      : na,
+      domain  : domain
+    });
 
   });
 
